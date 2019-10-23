@@ -8,7 +8,8 @@ import os
 
 
 commands = {
-        "git push": ['cd ~/Code/jack/tools ;git add .;git commit -m "automatic commit";git push']
+        "update": 'cd ~/Code/jack/tools ;git add .;git commit -m "automatic commit";git push',
+        "sleep": 'pmset sleepnow'
     }
 
 options = {
@@ -51,9 +52,8 @@ def main():
     if sys.argv[1]=='command':
         for command in commands:
             print(f'{command}')
-        choosen_command = str(input("Choose command."))
-        for command in commands[choosen_command]:
-            os.system(command)
+        choosen_command = str(input("Choose command.\n"))
+        os.system(commands[choosen_command])
         return
     
     
