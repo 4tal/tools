@@ -14,9 +14,11 @@ commands = {
 
 options = {
     "pipenv": [
+        "pipenv install",
+        "pipenv install --skip-lock",
         "pipenv install <package>",
         "pipenv update <package>",
-        "pipenv install"
+        "pipenv --rm"
         ],
     "git": [
         "git reset --hard <commit>",
@@ -27,7 +29,8 @@ options = {
         ':wq -> save and exit',
         ':q! -> exit without save'
     ],
-    "linux": ""
+    "linux": "",
+    "postgres":"IPFS Pinning"
     }
 
 setups = {
@@ -56,5 +59,8 @@ def main():
         os.system(commands[choosen_command])
         return
     
+    if len(sys.argv)==2:
+        for option in options[sys.argv[1]]:
+            print(option)
     
 main()
