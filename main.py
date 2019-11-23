@@ -13,6 +13,9 @@ commands = {
     }
 
 options = {
+    "pip": [
+        "pip freeze > file.text"
+        ],
     "pipenv": [
         "pipenv install",
         "pipenv install --skip-lock",
@@ -25,18 +28,27 @@ options = {
         "git stats",
         "git add <file/.>"
     ],
+    "search": [
+        'find /home/username/ -name "*.err"'
+    ],
     "vim": [
         ':wq -> save and exit',
-        ':q! -> exit without save'
+        ':q! -> exit without save',
+        '10j -> jump 10 lines'
     ],
     "linux": "",
-    "postgres":"IPFS Pinning"
+    "postgres": "IPFS Pinning",
+    "processess": [
+        "all -> ps -A",
+        "top",
+        "iostat"
+    ]
     }
 
 setups = {
-    "git":["git init"],
-    "ssh":{
-        "generate":["""ssh-keygen -t rsa -C 'idan.4tal@gmail.com'"""]
+    "git": ["git init"],
+    "ssh": {
+        "generate": ["""ssh-keygen -t rsa -C 'idan.4tal@gmail.com'"""]
     }
 }
 
