@@ -8,6 +8,7 @@ import os
 
 
 commands = {
+        "killwork": 'pkill -f ".*zoom";pkill -f ".*pycharm.*";pkill -f ".*Slack.*";pkill -f ".*webstorm.*";pkill -f ".*zoom";pkill -f ".*SmartGit.*";pkill -f ".*dbeaver.*"',
         "update": 'cd ~/Code/jack/tools ;git add .;git commit -m "automatic commit";git push',
         "sleep": 'pmset sleepnow'
     }
@@ -38,7 +39,7 @@ options = {
     ],
     "linux": "",
     "postgres": "IPFS Pinning",
-    "processess": [
+    "procesess": [
         "all -> ps -A",
         "top",
         "iostat"
@@ -64,14 +65,14 @@ def main():
             print(f'{setup}')
         return
 
-    if sys.argv[1]=='command':
+    if sys.argv[1] == 'command':
         for command in commands:
             print(f'{command}')
         choosen_command = str(input("Choose command.\n"))
         os.system(commands[choosen_command])
         return
     
-    if len(sys.argv)==2:
+    if len(sys.argv) == 2:
         for option in options[sys.argv[1]]:
             print(option)
     
